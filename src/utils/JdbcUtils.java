@@ -14,9 +14,6 @@ public class JdbcUtils {
 
     private static DruidDataSource dataSource;
 
-    /**
-     * 创建数据库连接池
-     */
     static {
         try {
             Properties properties = new Properties();

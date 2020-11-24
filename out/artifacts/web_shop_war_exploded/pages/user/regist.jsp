@@ -69,7 +69,7 @@
 
         <label>名称：</label>
         <label for="username">
-            <input type="text" placeholder="请输入用户名称" autocomplete="off" tabindex="1" name="username"
+            <input type="text" placeholder="字母数字下划线5-12位" autocomplete="off" tabindex="1" name="username"
                    value="${requestScope.username}"
                    id="username"/>
         </label>
@@ -78,7 +78,7 @@
 
         <label>密码：</label>
         <label for="password">
-            <input type="password" placeholder="请输入密码" autocomplete="off" tabindex="1" name="password"
+            <input type="password" placeholder="字母数字下划线5-12位" autocomplete="off" tabindex="1" name="password"
                    id="password"/>
         </label>
         <br/>
@@ -86,7 +86,7 @@
 
         <label>确认密码：</label>
         <label for="password">
-            <input type="password" placeholder="请再次输入密码" autocomplete="off" tabindex="1" name="password2"
+            <input type="password" placeholder="与上述密码一致" autocomplete="off" tabindex="1" name="password2"
                    id="password2"/>
         </label>
         <br/>
@@ -94,17 +94,11 @@
 
         <label>电子邮件：</label>
         <label for="email">
-            <input type="text" placeholder="请输入电子邮件地址" autocomplete="off" tabindex="1" name="email"
+            <input type="text" placeholder="正确电子邮件地址" autocomplete="off" tabindex="1" name="email"
                    value="${requestScope.email}"
                    id="email"/>
         </label>
         <br/>
-        <br/>
-
-        <span class="errorMsg">
-            ${ requestScope.msg }
-        </span>
-
         <br/>
         <button id="sub_btn" type="submit" class="btn btn-default">Submit</button>
     </form>

@@ -39,7 +39,17 @@
                     <td align="center">${orders.orderId}</td>
                     <td align="center">${orders.createTime}</td>
                     <td align="center">${orders.price}</td>
-                    <td align="center">${orders.status}</td>
+                    <td align="center">
+                        <c:if test="${orders.status == 0}">
+                            未完成
+                        </c:if>
+                        <c:if test="${orders.status == 1}">
+                            已完成
+                        </c:if>
+                        <c:if test="${orders.status == 2}">
+                            售后处理中
+                        </c:if>
+                    </td>
                     <td align="center"><button value="${orders.orderId}" onclick="location.href='OrderItemServlet?action=searOrderItem&id='+value">详情</button></td>
                 </tr>
             </c:forEach>

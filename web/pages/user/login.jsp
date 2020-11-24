@@ -5,13 +5,15 @@
   Time: 19:42
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Store Of LvTwelve</title>
 
     <%@ include file="/pages/basic/head.jsp" %>
+
+
 </head>
 
 <body>
@@ -26,7 +28,7 @@
 
         <label>账号：</label>
         <label for="username">
-            <input type="text" placeholder="请输入用户名称" autocomplete="off" tabindex="1" name="username"
+            <input type="text"  autocomplete="off" tabindex="1" name="username"
                    value="${requestScope.username}"
                    id="username"/>
         </label>
@@ -35,9 +37,14 @@
 
         <label>密码：</label>
         <label for="password">
-            <input type="password" placeholder="请输入密码" autocomplete="off" tabindex="1" name="password"
+            <input type="password"  autocomplete="off" tabindex="1" name="password"
                    id="password"/>
         </label>
+        <br/>
+        <br/>
+        <span >
+            ${ empty requestScope.msg ? "请输入用户名和密码":requestScope.msg }
+        </span>
         <br/>
         <br/>
         <button type="submit" class="btn btn-default">Submit</button>

@@ -75,7 +75,7 @@ public class UserServlet extends BaseServlet {
         if(login_user == null){
             //用户不存在
             //回显错误信息
-            req.setAttribute("msg", "用户或密码错误！");
+            req.setAttribute("msg", "账号或密码错误！");
             req.setAttribute("username", username);
             //返回登录页面
             req.getRequestDispatcher("/pages/user/login.jsp").forward(req, resp);
@@ -84,12 +84,18 @@ public class UserServlet extends BaseServlet {
             //用户存在
             //设置Session域值
             req.getSession().setAttribute("user",login_user);
+
+            //判断是否为管理员
+            //TODO 后续创建相应数据库及登录页面
             if(login_user.getId()==1){
+                //跳转到管理员主页
                 req.getRequestDispatcher("/pages/admin/admin.jsp").forward(req,resp);
             }
-            //跳转到个人页面
-            req.getRequestDispatcher("CommodityServlet?action=searComs_mall").forward(req,resp);
-            //req.getRequestDispatcher("/pages/mall/mall.jsp").forward(req,resp);
+            else {
+                //跳转到商城页面
+                req.getRequestDispatcher("CommodityServlet?action=searComs_mall").forward(req,resp);
+            }
+
         }
     }
 

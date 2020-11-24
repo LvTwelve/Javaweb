@@ -19,6 +19,7 @@ public class RecordServlet extends BaseServlet{
     private RecordService recordService = new RecordServiceImpl();
 
     protected void addRec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         //判断是否已登录
         User user = (User) request.getSession().getAttribute("user");
         if(user == null){
@@ -33,7 +34,6 @@ public class RecordServlet extends BaseServlet{
 
             request.getRequestDispatcher("CommodityServlet?action=searCom_id_det").forward(request,response);
         }
-
     }
 
     protected void searRec_id(HttpServletRequest request, HttpServletResponse response){
