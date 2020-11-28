@@ -44,23 +44,23 @@ public class OrderServlet extends BaseServlet{
         }
     }
 
-    protected void searOrder_id(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+    protected void searOrder_id(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         //获取参数 -- id
-        User user = (User) req.getSession().getAttribute("user");
+        User user = (User) request.getSession().getAttribute("user");
         //System.out.println(user.getId());
         List<Order> orders = orderService.searOrder_id(user.getId());
         //保存数据到页面中
-        req.setAttribute("order_id",orders);
+        request.setAttribute("order_id",orders);
         //回转页面
-        req.getRequestDispatcher("pages/user/order.jsp").forward(req,resp);
+        request.getRequestDispatcher("pages/user/order.jsp").forward(request,response);
     }
 
-    protected void searOrders(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+    protected void searOrders(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         //查找所有对象
         List<Order> orders = orderService.searOrders();
         //保存数据到页面中
-        req.setAttribute("order_all",orders);
+        request.setAttribute("order_all",orders);
         //回转页面
-        req.getRequestDispatcher("pages/admin/order_all.jsp").forward(req,resp);
+        request.getRequestDispatcher("pages/admin/order_all.jsp").forward(request,response);
     }
 }

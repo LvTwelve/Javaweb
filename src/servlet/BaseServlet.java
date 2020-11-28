@@ -9,21 +9,21 @@ import java.lang.reflect.Method;
 
 @WebServlet("/BaseServlet")
 public class BaseServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        req.setCharacterEncoding("UTF-8");
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        request.setCharacterEncoding("UTF-8");
 
-        String action = req.getParameter("action");
+        String action = request.getParameter("action");
         try {
             //根据action获取并调用事务
             Method method = this.getClass().getDeclaredMethod(action,HttpServletRequest.class,HttpServletResponse.class);
             //System.out.println(method);
-            method.invoke(this,req,resp);
+            method.invoke(this,request,response);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        doPost(req,resp);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        doPost(request,response);
     }
 }
