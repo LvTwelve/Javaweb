@@ -61,6 +61,14 @@ public class OrderServlet extends BaseServlet{
         //保存数据到页面中
         request.setAttribute("order_all",orders);
         //回转页面
-        request.getRequestDispatcher("pages/admin/order_all.jsp").forward(request,response);
+        User user = (User) request.getSession().getAttribute("user");
+        //管理员跳转
+        if (user.getId() == 1) {
+            request.getRequestDispatcher("pages/admin/order_all.jsp").forward(request, response);
+        }
+        //销售人员跳转
+        if (user.getId() == 2) {
+            request.getRequestDispatcher("pages/sales/order_all.jsp").forward(request, response);
+        }
     }
 }

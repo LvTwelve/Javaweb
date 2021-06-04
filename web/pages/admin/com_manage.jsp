@@ -52,7 +52,7 @@
         </table>
         <br/>
         <br/>
-        <button onclick="location.href='/web_shop/pages/admin/com_edit.jsp'">添加商品</button> |
+        <button onclick="location.href='../basic/com_edit.jsp'">添加商品</button> |
         <button onclick="location.href='/web_shop/pages/admin/admin.jsp'">返回</button>
     </div>
 </body>

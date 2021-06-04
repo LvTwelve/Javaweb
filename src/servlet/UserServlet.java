@@ -17,6 +17,7 @@ public class UserServlet extends BaseServlet {
 
     /**
      * 用户注册
+     *
      * @param request
      * @param response
      * @throws ServletException
@@ -32,7 +33,7 @@ public class UserServlet extends BaseServlet {
         User user = CommonUtils.MaptoBean(request.getParameterMap(), new User());
 
         //判断用户名是否可用
-        if(userService.existsUsername(user.getUsername())){
+        if (userService.existsUsername(user.getUsername())) {
             //用户名存在
             //回显错误信息
             request.setAttribute("msg", "用户名已存在！！");
@@ -40,17 +41,16 @@ public class UserServlet extends BaseServlet {
             request.setAttribute("email", email);
             //返回注册页面
             request.getRequestDispatcher("/pages/user/regist.jsp").forward(request, response);
-        }
-        else {
+        } else {
             //用户存在
             //保存数据
             userService.regist(user);
             //读取数据
-            User user1 =userService.searUserName(username);
+            User user1 = userService.searUserName(username);
             //设置Session域值
-            request.getSession().setAttribute("user",user1);
+            request.getSession().setAttribute("user", user1);
             //跳转到个人页面
-            request.getRequestDispatcher("/index.jsp").forward(request,response);
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
         }
 
 
@@ -58,6 +58,7 @@ public class UserServlet extends BaseServlet {
 
     /**
      * 用户登录
+     *
      * @param request
      * @param response
      * @throws ServletException
@@ -69,31 +70,33 @@ public class UserServlet extends BaseServlet {
         String password = request.getParameter("password");
 
         //处理业务
-        User login_user = userService.login(new User(null,username,password,null));
+        User login_user = userService.login(new User(null, username, password, null));
 
         //判断
-        if(login_user == null){
+        if (login_user == null) {
             //用户不存在
             //回显错误信息
             request.setAttribute("msg", "账号或密码错误！");
             request.setAttribute("username", username);
             //返回登录页面
             request.getRequestDispatcher("/pages/user/login.jsp").forward(request, response);
-        }
-        else {
+        } else {
             //用户存在
             //设置Session域值
-            request.getSession().setAttribute("user",login_user);
+            request.getSession().setAttribute("user", login_user);
 
             //判断是否为管理员
             //TODO 后续创建相应数据库及登录页面
-            if(login_user.getId()==1){
+            if (login_user.getId() == 1) {
                 //跳转到管理员主页
-                request.getRequestDispatcher("/pages/admin/admin.jsp").forward(request,response);
+                request.getRequestDispatcher("/pages/admin/admin.jsp").forward(request, response);
+            } else if(login_user.getId() == 2){
+                //跳转到销售人员主页
+                request.getRequestDispatcher("/pages/sales/sales.jsp").forward(request, response);
             }
             else {
                 //跳转到商城页面
-                request.getRequestDispatcher("CommodityServlet?action=searComs_mall").forward(request,response);
+                request.getRequestDispatcher("CommodityServlet?action=searComs_mall").forward(request, response);
             }
 
         }
@@ -101,6 +104,7 @@ public class UserServlet extends BaseServlet {
 
     /**
      * 用户注销
+     *
      * @param request
      * @param response
      * @throws ServletException
