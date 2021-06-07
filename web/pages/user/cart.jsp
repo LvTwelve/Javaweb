@@ -55,23 +55,23 @@
             <c:if test="${not empty sessionScope.cart.itemMap}">
                 <table class="table table-bordered table-hover">
                     <tr>
-                        <td align="center"><b>名称</b></td>
-                        <td align="center"><b>数量</b></td>
-                        <td align="center"><b>单价</b></td>
-                        <td align="center"><b>总价</b></td>
-                        <td align="center"> </td>
+                        <td style="text-align:center"><b>名称</b></td>
+                        <td style="text-align:center"><b>数量</b></td>
+                        <td style="text-align:center"><b>单价</b></td>
+                        <td style="text-align:center"><b>总价</b></td>
+                        <td style="text-align:center"> </td>
                     </tr>
                     <c:forEach items="${sessionScope.cart.itemMap}" var="item">
                         <tr>
-                            <td align="center">${item.value.name}</td>
-                            <td align="center">${item.value.price}</td>
-                            <td align="center">
+                            <td style="text-align:center">${item.value.name}</td>
+                            <td style="text-align:center">${item.value.price}</td>
+                            <td style="text-align:center">
                                 <label>
                                     <input class="updItem" id="${item.value.id}" value="${item.value.count}">
                                 </label>
                             </td>
-                            <td align="center">${item.value.totalPrice}</td>
-                            <td align="center"><button class="deleteItem" onclick="location.href='CartServlet?action=delItem&id='+${item.value.id}">删除</button></td>
+                            <td style="text-align:center">${item.value.totalPrice}</td>
+                            <td style="text-align:center"><button class="deleteItem" onclick="location.href='CartServlet?action=delItem&id='+${item.value.id}">删除</button></td>
                         </tr>
                     </c:forEach>
                 </table>

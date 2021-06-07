@@ -5,7 +5,7 @@
   Time: 1:55
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Store Of LvTwelve</title>
@@ -19,17 +19,17 @@
 <div>
     <table class="table table-bordered table-hover">
         <tr>
-            <td align="center"><b>用户</b></td>
-            <td align="center"><b>商品</b></td>
-            <td align="center"><b>名称</b></td>
-            <td align="center"><b>时间</b></td>
+            <td style="text-align:center"><b>用户</b></td>
+            <td style="text-align:center"><b>商品</b></td>
+            <td style="text-align:center"><b>名称</b></td>
+            <td style="text-align:center"><b>时间</b></td>
         </tr>
         <c:forEach items="${requestScope.records_all}" var="rec">
             <tr>
-                <td align="center">${rec.userId}</td>
-                <td align="center">${rec.comId}</td>
-                <td align="center">${rec.comName}</td>
-                <td align="center">${rec.createTime}</td>
+                <td style="text-align:center">${rec.userId}</td>
+                <td style="text-align:center">${rec.comId}</td>
+                <td style="text-align:center">${rec.comName}</td>
+                <td style="text-align:center">${rec.createTime}</td>
             </tr>
         </c:forEach>
     </table>

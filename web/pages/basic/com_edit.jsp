@@ -10,48 +10,51 @@
 <head>
     <title>Store Of LvTwelve</title>
 
-    <%@ include file="/pages/basic/head.jsp"%>
+    <%@ include file="/pages/basic/head.jsp" %>
 </head>
 <body>
 <div>
+    <h2>商品修改</h2>
     <form action="CommodityServlet" method="post">
         <input type="hidden" name="action" value="${ empty param.id ? "addCom" : "updCom"}"/>
-        <input type="hidden" name="id" value="${requestScope.commodity.id }" />
+        <input type="hidden" name="id" value="${requestScope.commodity.id }"/>
         <table class="table table-bordered table-hover">
             <tr>
-                <td align="center" ><b>名称</b></td>
-                <td align="center" ><b>价格</b></td>
-                <td align="center" ><b>商家</b></td>
-                <td align="center" ><b>销售量</b></td>
-                <td align="center" ><b>库存量</b></td>
+                <td style="text-align:center"><b>名称</b></td>
+                <td style="text-align:center"><b>价格</b></td>
+                <td style="text-align:center"><b>商家</b></td>
+                <td style="text-align:center"><b>销售量</b></td>
+                <td style="text-align:center"><b>库存量</b></td>
             </tr>
             <tr>
                 <td>
                     <label>
-                    <input  type="text" name="name" value="${requestScope.commodity.name}"/>
+                        <input type="text" name="name" value="${requestScope.commodity.name}"/>
                     </label>
                 </td>
                 <td>
                     <label>
-                    <input  type="text" name="price" value="${requestScope.commodity.price}"/>
+                        <input type="text" name="price" value="${requestScope.commodity.price}"/>
                     </label>
                 </td>
                 <td>
                     <label>
-                    <input  type="text" name="business" value="${requestScope.commodity.business}"/>
+                        <input type="text" name="business" value="${requestScope.commodity.business}"/>
                     </label>
                 </td>
                 <td>
                     <label>
-                    <input  type="text" name="sales" value="${requestScope.commodity.sales}"/>
+                        <input type="text" name="sales" value="${requestScope.commodity.sales}"/>
                     </label>
                 </td>
                 <td>
                     <label>
-                    <input  type="text" name="stock" value="${requestScope.commodity.stock}"/>
+                        <input type="text" name="stock" value="${requestScope.commodity.stock}"/>
                     </label>
                 </td>
-                <td><button type="submit">提交</button></td>
+                <td>
+                    <button type="submit">提交</button>
+                </td>
             </tr>
         </table>
     </form>

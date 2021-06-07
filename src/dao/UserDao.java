@@ -2,28 +2,36 @@ package dao;
 
 import pojo.User;
 
+import java.util.List;
+
 public interface UserDao {
 
     /**
      * 通过 用户名 查找用户
-     * @param username
+     *
      * @return null--用户不存在 else--用户已存在
      */
-    public User searchUserByName(String username);
+    User searchUserByName(String username);
 
     /**
      * 通过 用户名和密码 查找用户
-     * @param username
-     * @param password
+     *
      * @return null--用户名或密码错误 else--正确
      */
-    public User searchUserByNameAndPassword(String username, String password);
+    User searchUserByNameAndPassword(String username, String password);
 
     /**
      * 保存用户
-     * @param user
-     * @return
+     *
+     * @return -1--更新失败 else--更新行数
      */
-    public int saveUser(User user);
+    int saveUser(User user);
 
+    int updUserLevel(Integer level, Integer id);
+
+    int updUserPass(Integer pass, Integer id);
+
+    List<User> searSales();
+
+    User searUser_id(Integer id);
 }

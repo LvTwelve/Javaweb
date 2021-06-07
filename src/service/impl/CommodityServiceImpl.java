@@ -35,4 +35,9 @@ public class CommodityServiceImpl implements CommodityService {
     public void updCom(Commodity commodity) {
         commodityDao.updCom(commodity);
     }
+
+    @Override
+    public List<Integer> commenCom(Integer userId) {
+        return commodityDao.commendCom(userId);
+    }
 }

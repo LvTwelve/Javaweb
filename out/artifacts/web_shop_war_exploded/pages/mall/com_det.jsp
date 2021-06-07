@@ -18,24 +18,24 @@
     <br/>
     <table class="table table-bordered table-hover">
         <tr>
-            <td align="center"><b>名称</b></td>
-            <td align="center">${requestScope.commodity.name}</td>
+            <td style="text-align:center"><b>名称</b></td>
+            <td style="text-align:center">${requestScope.commodity.name}</td>
         </tr>
         <tr>
-            <td align="center"><b>价格</b></td>
-            <td align="center">${requestScope.commodity.price}</td>
+            <td style="text-align:center"><b>价格</b></td>
+            <td style="text-align:center">${requestScope.commodity.price}</td>
         </tr>
         <tr>
-            <td align="center"><b>商家</b></td>
-            <td align="center">${requestScope.commodity.business}</td>
+            <td style="text-align:center"><b>商家</b></td>
+            <td style="text-align:center">${requestScope.commodity.business}</td>
         </tr>
         <tr>
-            <td align="center"><b>销量</b></td>
-            <td align="center">${requestScope.commodity.sales}</td>
+            <td style="text-align:center"><b>销量</b></td>
+            <td style="text-align:center">${requestScope.commodity.sales}</td>
         </tr>
         <tr>
-            <td align="center"><b>库存</b></td>
-            <td align="center">${requestScope.commodity.stock}</td>
+            <td style="text-align:center"><b>库存</b></td>
+            <td style="text-align:center">${requestScope.commodity.stock}</td>
         </tr>
     </table>
     <br/>

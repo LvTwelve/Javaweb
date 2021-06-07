@@ -31,4 +31,9 @@ public class commodityDaotest {
     public void seaComs(){
         System.out.println(commodityDao.searComs());
     }
+
+    @Test
+    public void commenComs(){
+        System.out.println(commodityDao.commendCom(6));
+    }
 }

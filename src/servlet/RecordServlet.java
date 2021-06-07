@@ -1,8 +1,11 @@
 package servlet;
 
 import pojo.Record;
+import pojo.RecordOper;
 import pojo.User;
+import service.RecordOperService;
 import service.RecordService;
+import service.impl.RecordOPerServiceImpl;
 import service.impl.RecordServiceImpl;
 import utils.CommonUtils;
 
@@ -16,7 +19,8 @@ import java.util.List;
 @WebServlet("/RecordServlet")
 public class RecordServlet extends BaseServlet {
 
-    private RecordService recordService = new RecordServiceImpl();
+    private final RecordService recordService = new RecordServiceImpl();
+    private final RecordOperService recordOperService =new RecordOPerServiceImpl();
 
     protected void addRec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -39,19 +43,28 @@ public class RecordServlet extends BaseServlet {
         int searRec_user_id = CommonUtils.phaseInt(request.getParameter("searRec_user_id"));
         List<Record> records_id = recordService.searRec_id(searRec_user_id);
         request.setAttribute("records_id", records_id);
-
     }
 
     protected void searRec_all(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Record> records_all = recordService.searRec_all();
         request.setAttribute("records_all", records_all);
         User user = (User) request.getSession().getAttribute("user");
+        //操作日志记录
+        //获取ip地址
+        String ip;
+        if (request.getHeader("x-forwarded-for") == null) {
+            ip = request.getRemoteAddr();
+        } else {
+            ip = request.getHeader("x-forwarded-for");
+        }
+        //获取user属性
+        recordOperService.addRecOper(new RecordOper(null,null,user.getId(),ip,"searRec_all",user.getLevel()));
         //管理员跳转
-        if (user.getId() == 1) {
+        if (user.getLevel() == 1) {
             request.getRequestDispatcher("pages/admin/rec_view.jsp").forward(request, response);
         }
         //销售人员跳转
-        if (user.getId() == 2) {
+        if (user.getLevel() == 2) {
             request.getRequestDispatcher("pages/sales/rec_view.jsp").forward(request, response);
         }
     }

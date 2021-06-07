@@ -1,6 +1,9 @@
 package service;
 
+import pojo.Commodity;
 import pojo.User;
+
+import java.util.List;
 
 public interface UserService {
 
@@ -25,4 +28,13 @@ public interface UserService {
     boolean existsUsername(String username);
 
     User searUserName(String username);
+
+    void updUserLevel(Integer level,Integer id);
+
+    void updUserPass(Integer pass,Integer id);
+
+    User searUserId(Integer id);
+
+    List<User> searSales();
+
 }

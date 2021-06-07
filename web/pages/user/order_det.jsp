@@ -31,18 +31,18 @@
 <c:if test="${not empty requestScope.orderItems}">
     <table class="table table-bordered table-hover">
         <tr>
-            <td align="center"><b>名称</b></td>
-            <td align="center"><b>数量</b></td>
-            <td align="center"><b>单价</b></td>
-            <td align="center"><b>总价</b></td>
+            <td style="text-align:center"><b>名称</b></td>
+            <td style="text-align:center"><b>数量</b></td>
+            <td style="text-align:center"><b>单价</b></td>
+            <td style="text-align:center"><b>总价</b></td>
         </tr>
 
         <c:forEach items="${requestScope.orderItems}" var="orderItem">
             <tr>
-                <td align="center">${orderItem.name}</td>
-                <td align="center">${orderItem.count}</td>
-                <td align="center">${orderItem.price}</td>
-                <td align="center">${orderItem.totalPrice}</td>
+                <td style="text-align:center">${orderItem.name}</td>
+                <td style="text-align:center">${orderItem.count}</td>
+                <td style="text-align:center">${orderItem.price}</td>
+                <td style="text-align:center">${orderItem.totalPrice}</td>
             </tr>
         </c:forEach>
     </table>

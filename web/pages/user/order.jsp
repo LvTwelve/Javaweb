@@ -27,19 +27,19 @@
     <c:if test="${not empty requestScope.order_id}">
         <table class="table table-bordered table-hover">
             <tr>
-                <td align="center"><b>订单号</b></td>
-                <td align="center"><b>时间</b></td>
-                <td align="center"><b>金额</b></td>
-                <td align="center"><b>状态</b></td>
+                <td style="text-align:center"><b>订单号</b></td>
+                <td style="text-align:center"><b>时间</b></td>
+                <td style="text-align:center"><b>金额</b></td>
+                <td style="text-align:center"><b>状态</b></td>
                 <td> </td>
             </tr>
 
             <c:forEach items="${requestScope.order_id}" var="orders">
                 <tr>
-                    <td align="center">${orders.orderId}</td>
-                    <td align="center">${orders.createTime}</td>
-                    <td align="center">${orders.price}</td>
-                    <td align="center">
+                    <td style="text-align:center">${orders.orderId}</td>
+                    <td style="text-align:center">${orders.createTime}</td>
+                    <td style="text-align:center">${orders.price}</td>
+                    <td style="text-align:center">
                         <c:if test="${orders.status == 0}">
                             未完成
                         </c:if>
@@ -50,7 +50,7 @@
                             售后处理中
                         </c:if>
                     </td>
-                    <td align="center"><button value="${orders.orderId}" onclick="location.href='OrderItemServlet?action=searOrderItem&id='+value">详情</button></td>
+                    <td style="text-align:center"><button value="${orders.orderId}" onclick="location.href='OrderItemServlet?action=searOrderItem&id='+value">详情</button></td>
                 </tr>
             </c:forEach>
         </table>

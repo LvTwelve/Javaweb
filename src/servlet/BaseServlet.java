@@ -16,7 +16,6 @@ public class BaseServlet extends HttpServlet {
         try {
             //根据action获取并调用事务
             Method method = this.getClass().getDeclaredMethod(action,HttpServletRequest.class,HttpServletResponse.class);
-            //System.out.println(method);
             method.invoke(this,request,response);
         } catch (Exception e) {
             e.printStackTrace();

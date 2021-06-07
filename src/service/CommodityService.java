@@ -16,4 +16,6 @@ public interface CommodityService {
 
     void updCom(Commodity commodity);
 
+    List<Integer> commenCom(Integer userId);
+
 }

@@ -1,12 +1,14 @@
 package dao;
 
 import pojo.Commodity;
+import pojo.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface CommodityDao {
 
-    int addCom(Commodity commodity);
+    void addCom(Commodity commodity);
 
     int delCom_id(Integer id);
 
@@ -14,7 +16,8 @@ public interface CommodityDao {
 
     List<Commodity> searComs();
 
-    int updCom(Commodity commodity);
+    void updCom(Commodity commodity);
 
+    List<Integer> commendCom(Integer userId);
 
 }

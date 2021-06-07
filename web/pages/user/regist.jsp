@@ -14,8 +14,8 @@
 
     <%-- 验证输出完整性 --%>
     <script type="text/javascript">
-        $(function (){
-            $("#sub_btn").click(function (){
+        $(function () {
+            $("#sub_btn").click(function () {
                 //验证步骤
                 //1.获取内容
                 //2.创建正则表达式
@@ -24,7 +24,7 @@
                 //名称 -- 由字母，数字下划线组成，并且长度为5到12位
                 let usernameTxt = $('#username').val();
                 let usernamePat = /^\w{5,12}$/;
-                if(usernamePat.test(usernameTxt) === false){
+                if (usernamePat.test(usernameTxt) === false) {
                     alert("用户名不合法！");
                     return false;
                 }
@@ -32,22 +32,22 @@
                 //密码 -- 由字母，数字下划线组成，并且长度为5到12位
                 let passwordTxt = $('#password').val();
                 let passwordPat = /^\w{5,12}$/;
-                if(passwordPat.test(passwordTxt) === false){
+                if (passwordPat.test(passwordTxt) === false) {
                     alert("密码不合法！");
                     return false;
                 }
 
                 //确认密码 -- 与密码一致
                 let password2Txt = $('#password2').val();
-                if(password2Txt !== passwordTxt){
+                if (password2Txt !== passwordTxt) {
                     alert("密码不一致！");
                     return false;
                 }
 
                 //邮箱 -- xxxxx@xxx.com
                 let emailTxt = $('#email').val();
-                let emailPat= /^([a-zA-Z]|[0-9])(\w)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
-                if(emailPat.test(emailTxt) === false){
+                let emailPat = /^([a-zA-Z]|[0-9])(\w)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+                if (emailPat.test(emailTxt) === false) {
                     alert("邮箱不合法！");
                     return false;
                 }

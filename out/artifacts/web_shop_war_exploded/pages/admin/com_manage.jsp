@@ -10,8 +10,7 @@
 <html>
 <head>
     <title>Store Of LvTwelve</title>
-
-    <%@ include file="/pages/basic/head.jsp"%>
+    <%@ include file="/pages/basic/head.jsp" %>
 
     <script type="text/javascript">
         $(function () {
@@ -23,37 +22,40 @@
     </script>
 </head>
 <body>
-    <h2>商品管理</h2>
-    <br/>
-    <br/>
-    <div>
-        <table class="table table-bordered table-hover">
+<h2>商品管理</h2>
+<br/>
+<br/>
+<div>
+    <table class="table table-bordered table-hover">
+        <tr>
+            <td style="text-align:center"><b>名称</b></td>
+            <td style="text-align:center"><b>价格</b></td>
+            <td style="text-align:center"><b>商家</b></td>
+            <td style="text-align:center"><b>销售量</b></td>
+            <td style="text-align:center"><b>库存量</b></td>
+            <td style="text-align:center"><b>操作</b></td>
+            <td style="text-align:center"><b>操作</b></td>
+        </tr>
+        <c:forEach items="${requestScope.commodities}" var="com">
             <tr>
-                <td align="center" ><b>名称</b></td>
-                <td align="center" ><b>价格</b></td>
-                <td align="center" ><b>商家</b></td>
-                <td align="center" ><b>销售量</b></td>
-                <td align="center" ><b>库存量</b></td>
-                <td align="center" ><b>操作</b></td>
-                <td align="center" ><b>操作</b></td>
+                <td style="text-align:center">${com.name}</td>
+                <td style="text-align:center">${com.price}</td>
+                <td style="text-align:center">${com.business}</td>
+                <td style="text-align:center">${com.sales}</td>
+                <td style="text-align:center">${com.stock}</td>
+                <td style="text-align:center"><a
+                        href="CommodityServlet?action=searCom_id&id=${com.id}&com_edit=true">修改</a></td>
+                <td style="text-align:center"><a class="deleteclass" href="CommodityServlet?action=delCom&id=${com.id}">删除</a>
+                </td>
             </tr>
-            <c:forEach items="${requestScope.commodities}" var="com">
-                <tr>
-                    <td align="center" >${com.name}</td>
-                    <td align="center" >${com.price}</td>
-                    <td align="center" >${com.business}</td>
-                    <td align="center" >${com.sales}</td>
-                    <td align="center" >${com.stock}</td>
-                    <td align="center" ><a href="CommodityServlet?action=searCom_id&id=${com.id}&com_edit=true">修改</a></td>
-                    <td align="center" ><a class="deleteclass" href="CommodityServlet?action=delCom&id=${com.id}">删除</a></td>
-                </tr>
-            </c:forEach>
+        </c:forEach>
 
-        </table>
-        <br/>
-        <br/>
-        <button onclick="location.href='../basic/com_edit.jsp'">添加商品</button> |
-        <button onclick="location.href='/web_shop/pages/admin/admin.jsp'">返回</button>
-    </div>
+    </table>
+    <br/>
+    <br/>
+    <button onclick="location.href='/web_shop/pages/basic/com_edit.jsp'">添加商品</button>
+    |
+    <button onclick="location.href='/web_shop/pages/admin/admin.jsp'">返回</button>
+</div>
 </body>
 </html>

@@ -19,19 +19,34 @@
     <br/>
 </div>
 
-    <form action="CommodityServlet" method="post">
-        <input type="hidden" name="action" value="searComs_manage"/>
-        <button type="submit">商品管理</button>
-    </form>
-    <br/>
-    <form action="OrderServlet" method="post">
-        <input type="hidden" name="action" value="searOrders"/>
-        <button type="submit">订单查看</button>
-    </form>
-    <br/>
-    <form action="RecordServlet" method="post">
-        <input type="hidden" name="action" value="searRec_all"/>
-        <button type="submit">浏览记录查看</button>
-    </form>
+<form action="CommodityServlet" method="post">
+    <input type="hidden" name="action" value="searComs_manage"/>
+    <button type="submit">商品管理</button>
+</form>
+<br/>
+<form action="OrderServlet" method="post">
+    <input type="hidden" name="action" value="searOrders"/>
+    <button type="submit">订单查看</button>
+</form>
+<br/>
+<form action="RecordServlet" method="post">
+    <input type="hidden" name="action" value="searRec_all"/>
+    <button type="submit">浏览记录查看</button>
+</form>
+<br/>
+<form action="RecordLoginServlet" method="post">
+    <input type="hidden" name="action" value="searRecLogin_all"/>
+    <button type="submit">登录记录查看</button>
+</form>
+<br/>
+<form action="UserServlet" method="post">
+    <input type="hidden" name="action" value="searSales"/>
+    <button type="submit">销售人员管理</button>
+</form>
+<br/>
+<form action="RecordOperServlet" method="post">
+    <input type="hidden" name="action" value="searRecOper_all"/>
+    <button type="submit">操作日志查看</button>
+</form>
 </body>
 </html>

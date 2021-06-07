@@ -22,20 +22,20 @@
 <div>
     <table class="table table-bordered table-hover">
         <tr>
-            <td align="center"><b>*</b></td>
-            <td align="center"><b>名称</b></td>
-            <td align="center"><b>价格</b></td>
-            <td align="center"><b>操作</b></td>
-            <td align="center"><b>操作</b></td>
+            <td style="text-align:center"><b>*</b></td>
+            <td style="text-align:center"><b>名称</b></td>
+            <td style="text-align:center"><b>价格</b></td>
+            <td style="text-align:center"><b>操作</b></td>
+            <td style="text-align:center"><b>操作</b></td>
 
         </tr>
         <c:forEach items="${requestScope.commodities}" var="com">
             <tr>
-                <td align="center">*</td>
-                <td align="center">${com.name}</td>
-                <td align="center">${com.price}</td>
-                <td align="center"><button value="${com.id}" name="${com.name}" onclick="location.href='RecordServlet?action=addRec&comId='+value+'&comName='+name">查看详情</button></td>
-                <td align="center"><button value="${com.id}" onclick="location.href='CartServlet?action=addItem&id='+value">加入购物车</button></td>
+                <td style="text-align:center">*</td>
+                <td style="text-align:center">${com.name}</td>
+                <td style="text-align:center">${com.price}</td>
+                <td style="text-align:center"><button value="${com.id}" name="${com.name}" onclick="location.href='RecordServlet?action=addRec&comId='+value+'&comName='+name">查看详情</button></td>
+                <td style="text-align:center"><button value="${com.id}" onclick="location.href='CartServlet?action=addItem&id='+value">加入购物车</button></td>
             </tr>
         </c:forEach>
     </table>
