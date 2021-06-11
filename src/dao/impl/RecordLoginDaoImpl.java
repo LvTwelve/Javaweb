@@ -8,15 +8,15 @@ import java.util.List;
 
 public class RecordLoginDaoImpl extends BaseDao implements RecordLoginDao {
     @Override
-    public int addRecLogin(RecordLogin recordLogin) {
+    public void addRecLogin(RecordLogin recordLogin) {
         String sql = "insert into recordlogin(`userId`,`ip`,`level`) values(?,?,?)";
-        return update(sql,recordLogin.getUserId(),recordLogin.getIp(),recordLogin.getLevel());
+        update(sql, recordLogin.getUserId(), recordLogin.getIp(), recordLogin.getLevel());
     }
 
     @Override
-    public int updRecLogin(RecordLogin recordLogin) {
+    public void updRecLogin(RecordLogin recordLogin) {
         String sql = "update recordlogin set `logoutTime` = current_timestamp() where id = ?";
-        return update(sql,recordLogin.getId());
+        update(sql, recordLogin.getId());
     }
 
     @Override

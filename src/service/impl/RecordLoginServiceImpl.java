@@ -13,7 +13,7 @@ import java.util.List;
 
 public class RecordLoginServiceImpl implements RecordLoginService {
 
-    private RecordLoginDao recordLoginDao = new RecordLoginDaoImpl();
+    private final RecordLoginDao recordLoginDao = new RecordLoginDaoImpl();
 
     @Override
     public void addRecLogin(RecordLogin recordLogin) {

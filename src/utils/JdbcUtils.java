@@ -47,7 +47,6 @@ public class JdbcUtils {
 
     /**
      * 关闭连接
-     * @param conn
      */
     public static void close(Connection conn){
 

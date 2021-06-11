@@ -8,7 +8,7 @@ import pojo.Commodity;
 import java.math.BigDecimal;
 
 public class commodityDaotest {
-    private CommodityDao commodityDao = new CommodityDaoImpl();
+    private final CommodityDao commodityDao = new CommodityDaoImpl();
 
     @Test
     public void addCom(){
@@ -34,6 +34,6 @@ public class commodityDaotest {
 
     @Test
     public void commenComs(){
-        System.out.println(commodityDao.commendCom(6));
+        System.out.println(commodityDao.commendCom(10));
     }
 }

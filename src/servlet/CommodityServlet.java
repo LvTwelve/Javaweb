@@ -14,7 +14,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -163,11 +162,11 @@ public class CommodityServlet extends BaseServlet {
         //System.out.println(commodities_all);
         //获取商品id
         List<Integer> comids = commodityService.commenCom(user.getId());
-        //System.out.println(comids);
+        System.out.println(comids);
         //根据商品id获取商品信息
         List<Commodity> commodities = new ArrayList<>();
-        for(int i = 0;i<comids.size();i++){
-            commodities.add(commodityService.searCom_id(comids.get(i)));
+        for (Integer comid : comids) {
+            commodities.add(commodityService.searCom_id(comid));
         }
         System.out.println(commodities);
         while(commodities.size()<3){

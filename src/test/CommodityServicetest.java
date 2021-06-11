@@ -8,7 +8,7 @@ import service.impl.CommodityServiceImpl;
 import java.math.BigDecimal;
 
 public class CommodityServicetest {
-    private CommodityService commodityService = new CommodityServiceImpl();
+    private final CommodityService commodityService = new CommodityServiceImpl();
 
     @Test
     public void addCom(){
@@ -30,5 +30,10 @@ public class CommodityServicetest {
     @Test
     public void seaComs(){
         System.out.println(commodityService.searComs());
+    }
+
+    @Test
+    public void commenComs(){
+
     }
 }

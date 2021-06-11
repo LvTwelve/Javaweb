@@ -1,6 +1,5 @@
 package dao;
 
-import pojo.Order;
 import pojo.OrderItem;
 
 import java.util.List;

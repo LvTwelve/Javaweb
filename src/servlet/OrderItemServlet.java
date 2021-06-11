@@ -15,7 +15,7 @@ import java.util.List;
 
 @WebServlet("/OrderItemServlet")
 public class OrderItemServlet extends BaseServlet{
-    private OrderItemService orderItemService = new OrderItemServiceImpl();
+    private final OrderItemService orderItemService = new OrderItemServiceImpl();
 
     protected void searOrderItem(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //获取参数 -- id

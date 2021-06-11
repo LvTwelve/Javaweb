@@ -1,6 +1,5 @@
 package dao;
 
-import pojo.RecordLogin;
 import pojo.RecordOper;
 
 import java.util.List;

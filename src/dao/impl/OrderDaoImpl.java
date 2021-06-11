@@ -10,8 +10,6 @@ public class OrderDaoImpl extends BaseDao implements OrderDao {
     @Override
     public int saveOrder(Order order) {
         String sql = "insert into `order`(`orderId`,`price`,`status`,`userId`) values(?,?,?,?)";
-        //String sql1 = "insert into user(`username`,`password`,`email`) values(?,?,?)";
-        //INSERT INTO `web_shop`.`order` (`order_id`, `create_time`, `price`, `status`, `user_id`)
         return update(sql,order.getOrderId(),order.getPrice(),order.getStatus(),order.getUserId());
 
     }

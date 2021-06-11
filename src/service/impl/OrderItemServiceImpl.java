@@ -8,7 +8,7 @@ import service.OrderItemService;
 import java.util.List;
 
 public class OrderItemServiceImpl implements OrderItemService {
-    private OrderItemDao orderItemDao = new OrderItemDaoImpl();
+    private final OrderItemDao orderItemDao = new OrderItemDaoImpl();
     @Override
     public List<OrderItem> searOrderItem(String id) {
 

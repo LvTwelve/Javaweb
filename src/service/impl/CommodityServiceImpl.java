@@ -9,7 +9,7 @@ import java.util.List;
 
 public class CommodityServiceImpl implements CommodityService {
 
-    private CommodityDao commodityDao = new CommodityDaoImpl();
+    private final CommodityDao commodityDao = new CommodityDaoImpl();
 
     @Override
     public void addCom(Commodity commodity) {

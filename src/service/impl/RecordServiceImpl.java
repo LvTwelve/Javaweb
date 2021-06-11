@@ -9,7 +9,7 @@ import java.util.List;
 
 public class RecordServiceImpl implements RecordService {
 
-    private RecordDao recordDao = new RecordDaoImpl();
+    private final RecordDao recordDao = new RecordDaoImpl();
 
     @Override
     public void addRec(Record record) {

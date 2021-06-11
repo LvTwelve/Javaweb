@@ -19,9 +19,9 @@ import java.util.Map;
 
 public class OrderServiceImpl implements OrderService {
 
-    private OrderDao orderDao = new OrderDaoImpl();
-    private OrderItemDao orderItemDao = new OrderItemDaoImpl();
-    private CommodityDao commodityDao = new CommodityDaoImpl();
+    private final OrderDao orderDao = new OrderDaoImpl();
+    private final OrderItemDao orderItemDao = new OrderItemDaoImpl();
+    private final CommodityDao commodityDao = new CommodityDaoImpl();
 
     @Override
     public Map<Integer,String> createOrder(Cart cart, Integer userId) {

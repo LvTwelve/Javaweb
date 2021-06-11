@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/EmailServlet")
 public class EmailServlet extends BaseServlet{
-    private EmailService emailService = new EmailServiceImpl();
+    private final EmailService emailService = new EmailServiceImpl();
 
     protected void sendEmail(HttpServletRequest request, HttpServletResponse response){
 

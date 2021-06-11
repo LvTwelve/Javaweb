@@ -7,7 +7,7 @@ import service.impl.EmailServiceImpl;
 import javax.mail.internet.AddressException;
 
 public class emailServicetest {
-    private EmailService emailService = new EmailServiceImpl();
+    private final EmailService emailService = new EmailServiceImpl();
 
     @Test
     public void addEmail() throws AddressException {

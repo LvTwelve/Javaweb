@@ -7,11 +7,10 @@ import java.util.Map;
 public class Cart {
     //将购物车信息保存在Session域中
 
-    private Map<Integer,CartItem> itemMap = new LinkedHashMap<>();
+    private final Map<Integer,CartItem> itemMap = new LinkedHashMap<>();
 
     /**
      * 新增商品
-     * @param cartItem
      */
     public void addItem(CartItem cartItem){
         CartItem newItem = itemMap.get(cartItem.getId());
@@ -30,7 +29,6 @@ public class Cart {
 
     /**
      * 删除商品
-     * @param id
      */
     public void delItem(Integer id){
         itemMap.remove(id);
@@ -38,8 +36,6 @@ public class Cart {
 
     /**
      * 更改商品
-     * @param id
-     * @param count
      */
     public void updItem_count(Integer id,Integer count){
         CartItem updItem = itemMap.get(id);
@@ -59,7 +55,6 @@ public class Cart {
 
     /**
      * 获取商品总数
-     * @return
      */
     public Integer getTotalCount(){
         Integer totalCount = 0;
@@ -73,7 +68,6 @@ public class Cart {
 
     /**
      * 获取购物车总价格
-     * @return
      */
     public BigDecimal getTotalPrice(){
         BigDecimal totalPrice = new BigDecimal(0);

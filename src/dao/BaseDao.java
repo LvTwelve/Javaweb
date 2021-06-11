@@ -67,7 +67,7 @@ public  abstract class BaseDao {
 
     /**
      * 查找数据库 返回对象值
-     * @return
+     * @return 结果集的第一个数据
      */
     public Object queryForValue(String sql,Object... args){
         Connection connection = JdbcUtils.getConnection();
@@ -84,12 +84,12 @@ public  abstract class BaseDao {
 
     /**
      * 查找数据库 返回对象值
-     * @return
+     * @return 返回“count”列的值
      */
     public Object queryForValues(String sql,Object... args){
         Connection connection = JdbcUtils.getConnection();
         try {
-            return queryRunner.query(connection,sql,new ColumnListHandler(),args);
+            return queryRunner.query(connection,sql,new ColumnListHandler("count"),args);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {

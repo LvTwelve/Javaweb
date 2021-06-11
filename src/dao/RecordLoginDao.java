@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface RecordLoginDao {
 
-    int addRecLogin(RecordLogin recordLogin);
+    void addRecLogin(RecordLogin recordLogin);
 
-    int updRecLogin(RecordLogin recordLogin);
+    void updRecLogin(RecordLogin recordLogin);
 
     int getRecLogin_id(int userId);
 

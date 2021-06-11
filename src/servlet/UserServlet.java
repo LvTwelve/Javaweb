@@ -18,16 +18,11 @@ import java.util.List;
 
 @WebServlet("/UserServlet")
 public class UserServlet extends BaseServlet {
-    private UserService userService = new UserServiceImpl();
-    private RecordLoginService recordLoginService = new RecordLoginServiceImpl();
+    private final UserService userService = new UserServiceImpl();
+    private final RecordLoginService recordLoginService = new RecordLoginServiceImpl();
 
     /**
      * 用户注册
-     *
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
      */
     public void regist(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -72,11 +67,6 @@ public class UserServlet extends BaseServlet {
 
     /**
      * 用户登录
-     *
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
      */
     public void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //获取参数
@@ -120,13 +110,8 @@ public class UserServlet extends BaseServlet {
 
     /**
      * 用户注销
-     *
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
      */
-    public void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //获取ip地址
         String ip;
         if (request.getHeader("x-forwarded-for") == null) {
@@ -146,7 +131,7 @@ public class UserServlet extends BaseServlet {
         response.sendRedirect(request.getContextPath());
     }
 
-    protected void updUserPass(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void updUserPass(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //获取参数
         int password = CommonUtils.phaseInt(request.getParameter("password"));
         int id = CommonUtils.phaseInt(request.getParameter("id"));
@@ -156,7 +141,7 @@ public class UserServlet extends BaseServlet {
         response.sendRedirect("UserServlet?action=searSales");
     }
 
-    protected void updUserLevel(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void updUserLevel(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //获取参数
         int level = CommonUtils.phaseInt(request.getParameter("level"));
         int id = CommonUtils.phaseInt(request.getParameter("id"));

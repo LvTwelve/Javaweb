@@ -17,13 +17,10 @@ import java.io.IOException;
 @WebServlet("/CartServlet")
 public class CartServlet extends BaseServlet{
 
-    private CommodityService commodityService = new CommodityServiceImpl();
+    private final CommodityService commodityService = new CommodityServiceImpl();
 
     /**
      * 新增购物车Item
-     * @param request
-     * @param response
-     * @throws IOException
      */
     protected void addItem(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         //判断是否已登录
@@ -52,9 +49,6 @@ public class CartServlet extends BaseServlet{
 
     /**
      * 删除购物车Item
-     * @param request
-     * @param response
-     * @throws IOException
      */
     protected void delItem(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //获取id及Cart值
@@ -70,9 +64,6 @@ public class CartServlet extends BaseServlet{
 
     /**
      * 改变购物车Item
-     * @param request
-     * @param response
-     * @throws IOException
      */
     protected void updItem_count(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //获取id及Cart值
@@ -89,9 +80,6 @@ public class CartServlet extends BaseServlet{
 
     /**
      * 清空购物车
-     * @param request
-     * @param response
-     * @throws IOException
      */
     protected void clearCart(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //获取id及Cart值
